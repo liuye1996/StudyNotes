@@ -63,11 +63,24 @@ print(spam * 3)
 #Also, they can't start with numbers.Spaces are not allowed
 this_is_a_normal_name = 7
 
+#You can use the del statement to remove a variable
+foo = "a string"
+foo
+del foo
+# foo   Error: name 'foo' is not defined
 
+#take the value of the variable from the user input.
+# f1 = input("Enter a number: ")
+# print(f1)
 
+#In-Place Operators   'x = x + 3' to   'x += 3'
+# also -, *, / and % as well.
+x = 2
+x += 3
+print(x)
 
-
-
-
-
-
+#These operators can be used on types other than numbers, as well, such as strings.
+x = "spam"
+print(x)
+x += "eggs"
+print(x)
