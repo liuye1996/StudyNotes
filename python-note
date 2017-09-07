@@ -1,0 +1,73 @@
+#hello word first python programmer
+print("Hello World!"'\n')
+
+#simple add
+print(1 + 1)
+
+#dividing
+print(3/4)
+
+#dividing int to float
+print(6 * 7.0)
+
+#add int to float
+print(4 + 1.65)
+
+#Exponentiation
+print(2**5)
+print(9 ** (1/2))
+
+#Quotient & Remainder 
+print(20 // 6)
+print(1.25 % 0.5)
+
+#string add
+print("2"+'3')
+
+#Strings
+print("Python is fun!"+'\n')
+
+#\'   and  ''  difference
+print('Brian\'s mother: He\'s not the Messiah. He\'s a very naughty boy!'+'\n')
+
+# string with three sets of quotes """" """"
+print("""Customer: Good morning.
+Owner: Good morning, Sir. Welcome to the National Cheese Emporium."""+'\n')
+
+#output string
+print('print("print")'+'\n')
+
+#input 
+#input("Enter something please: ")
+
+#Strings can also be multiplied by integers
+print("spam" * 3)
+print( 4 * '2')
+# print('17' * '87')  can't multiply sequence by non-int of type 'str'
+# print('pythonisfun' * 7.0) can't multiply sequence by non-int of type 'float'
+
+#Type Conversion
+print( "2" + "3")
+print(int("2") + int("3"))
+
+# print(float(input("Enter a number: ")) + float(input("Enter another number: ")) )
+
+#Enter a number:2
+# print(float("210" * int(input("Enter a number:" ))) )
+
+#Variables
+spam = "eggs"
+print(spam * 3)
+
+#Variable Names The only characters that are allowed are letters, numbers, and underscores.
+#Also, they can't start with numbers.Spaces are not allowed
+this_is_a_normal_name = 7
+
+
+
+
+
+
+
+
+
