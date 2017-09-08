@@ -1,0 +1,39 @@
+###Control Structures###
+
+#Booleans
+my_boolean = True
+print(my_boolean)
+print(2 == 3)
+print("hello" == "hello")
+
+#Comparison
+#the not equal operator (!=)
+print(1 != 1)
+
+# < and >, <= and >=
+print( 7 > 5 )
+print( 7 < 5.0 )
+print( 7 >= 5 )
+print( 7 <= 7 )
+
+#### dont forget ":" behind if and else ! ####
+#if Statements
+if 10 > 5:
+   print("10 greater than 5")
+print("Program ended")
+
+#if statements can be nested
+num = 12
+if num > 5:
+   print("Bigger than 5")
+   if num <=47:
+      print("Between 5 and 47")
+      
+#else Statements
+x = 4
+if x == 5:
+   print("Yes")
+else:
+   print("No")
+   
+
