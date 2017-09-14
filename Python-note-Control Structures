@@ -29,7 +29,6 @@ if num > 5:
    if num <=47:
       print("Between 5 and 47")
       
-
 #else Statements
 x = 4
 if x == 5:
@@ -37,4 +36,9 @@ if x == 5:
 else:
    print("No")
    
-
+#while Loops
+i = 1
+while i <=5:
+   print(i)
+   i = i + 1
+print("Finished!")
