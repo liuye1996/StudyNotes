@@ -41,4 +41,48 @@ i = 1
 while i <=5:
    print(i)
    i = i + 1
+   
 print("Finished!")
+
+#break
+i = 0
+while 1==1:
+  print(i)
+  i = i + 1
+  if i >= 5:
+    print("Breaking")
+    break
+
+print("Finished")
+
+#continue
+i = 0
+while True:
+   i = i +1
+   if i == 2:
+      print("Skipping 2")
+      continue
+   if i == 5:
+      print("Breaking")
+      break
+   print(i)
+
+print("Finished")
+
+#Lists
+words = ["Hello", "world", "!"]
+print(words[0])
+print(words[1])
+print(words[2])
+
+#Typically, a list will contain items of a single item type, but it is also possible to include several different types. 
+#Lists can also be nested within other lists.
+number = 3
+things = ["string", 0, [1, 2, number], 4.56]
+print(things[1])
+print(things[2])
+print(things[2][2])
+
+#list string
+str = "Hello world!"
+print(str[6])
