@@ -167,4 +167,14 @@ while counter <= max_index:
    print(word + "!")
    counter = counter + 1 
 
+##### for loop #####
+#Iterating through a list using a while loop requires quite a lot of code, so Python provides the for loop as a shortcut that accomplishes the same thing.
+#The same code from the previous example can be written with a for loop, as follows:
+words = ["hello", "world", "spam", "eggs"]
+for word in words:
+  print(word + "!")
+  
+#The for loop is commonly used to repeat some code a certain number of times. This is done by combining for loops with range objects.
+for i in range(5):
+    print("hello!")
 
