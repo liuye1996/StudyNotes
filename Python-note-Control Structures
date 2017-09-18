@@ -153,9 +153,18 @@ print(numbers)
 print(range(20) == range(0, 20))
 
 #the third argument
+#range can have a third argument, which determines the interval of the sequence produced. This third argument must be an integer.
 numbers = list(range(5, 20, 2))
 print(numbers)
 
+#Sometimes, you need to perform code on each item in a list. This is called iteration, and it can be accomplished with a while loop and a counter variable.
+words = ["hello", "world", "spam", "eggs"]
+counter = 0
+max_index = len(words) - 1
 
+while counter <= max_index:
+   word = words[counter]
+   print(word + "!")
+   counter = counter + 1 
 
 
