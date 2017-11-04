@@ -1,1 +1,26 @@
+#In addition to using pre-defined functions, you can create your own functions by using the def statement.
+#Here is an example of a function named my_func. It takes no arguments, and prints "spam" three times. It is defined, and then called. The statements in the function are executed only when the function is called.
+def my_func():
+   print("spam")
+   print("spam")
+   print("spam")
 
+my_func()
+#You must define functions before they are called, in the same way that you must assign variables before using them.
+
+#Arguments
+#All the function definitions we've looked at so far have been functions of zero arguments, which are called with empty parentheses. 
+#However, most functions take arguments.
+#The example below defines a function that takes one argument:
+
+def print_with_exclamation(word):
+   print(word + "!")
+    
+print_with_exclamation("spam")
+print_with_exclamation("eggs")
+print_with_exclamation("python")
+
+def print_sum_twice(x, y):
+   print(x + y)
+   print(x + y)
+print_sum_twice(5, 8)
