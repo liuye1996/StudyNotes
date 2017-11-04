@@ -24,3 +24,53 @@ def print_sum_twice(x, y):
    print(x + y)
    print(x + y)
 print_sum_twice(5, 8)
+
+#Returning from Functions
+#ertain functions, such as int or str, return a value that can be used later. 
+#To do this for your defined functions, you can use the return statement.
+def max(x, y):
+    if x >=y:
+        return x
+    else:
+        return y
+        
+print(max(4, 7))
+z = max(8, 5)
+print(z)
+
+#Once you return a value from a function, it immediately stops being executed. Any code after the return statement will never happen.
+def add_numbers(x, y):
+  total = x + y
+  return total
+  print("This won't be printed")
+print(add_numbers(4, 5))
+
+#Functions
+#Although they are created differently from normal variables, functions are just like any other kind of value. 
+#They can be assigned and reassigned to variables, and later referenced by those names.
+def multiply(x, y):
+   return x * y
+a = 4
+b = 7
+operation = multiply
+print(operation(a, b))
+
+#Functions can also be used as arguments of other functions.
+def add(x, y):
+  return x + y
+def do_twice(func, x, y):
+  return func(func(x, y), func(x, y))
+a = 5
+b = 10
+print(do_twice(add, a, b))
+
+#Modules
+#There is another kind of import that can be used if you only need certain functions from a module.
+#These take the form from module_name import var, and then var can be used as if it were defined normally in your code. 
+#For example, to import only the pi constant from the math module:
+from math import pi
+print(pi)
+
+#You can import a module or object under a different name using the as keyword. This is mainly used when a module or object has a long or confusing name.
+from math import sqrt as square_root
+print(square_root(100))
