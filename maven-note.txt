@@ -1,11 +1,13 @@
+https://www.imooc.com/learn/443
 
-maven½éÉÜ¼°»·¾³´î½¨
 
-MavenÊÇ»ùÓÚÏîÄ¿¶ÔÏóÄ£ĞÍ£¨pom£©£¬¿ÉÒÔÍ¨¹ıÒ»Ğ¡¶ÎÃèÊöĞÅÏ¢À´¹ÜÀíÏîÄ¿µÄ¹¹½¨¡¢±¨¸æºÍÎÄµµµÄÈí¼şÏîÄ¿¹ÜÀí¹¤¾ß
+mavenä»‹ç»åŠç¯å¢ƒæ­å»º
+
+Mavenæ˜¯åŸºäºé¡¹ç›®å¯¹è±¡æ¨¡å‹ï¼ˆpomï¼‰ï¼Œå¯ä»¥é€šè¿‡ä¸€å°æ®µæè¿°ä¿¡æ¯æ¥ç®¡ç†é¡¹ç›®çš„æ„å»ºã€æŠ¥å‘Šå’Œæ–‡æ¡£çš„è½¯ä»¶é¡¹ç›®ç®¡ç†å·¥å…·
 
 --------------------------------------------------------------------------------------
 
-	Ä¿Â¼½á¹¹
+	ç›®å½•ç»“æ„
 
 		src
 		    -main
@@ -20,94 +22,94 @@ MavenÊÇ»ùÓÚÏîÄ¿¶ÔÏóÄ£ĞÍ£¨pom£©£¬¿ÉÒÔÍ¨¹ıÒ»Ğ¡¶ÎÃèÊöĞÅÏ¢À´¹ÜÀíÏîÄ¿µÄ¹¹½¨¡¢±¨¸æºÍÎÄ
 
 pom
 
-<groupId> ÏîÄ¿°üÃû
+<groupId> é¡¹ç›®åŒ…å
 
-<artifactId> Ä£¿éÃû
+<artifactId> æ¨¡å—å
 
-<version>  °æ±¾
+<version>  ç‰ˆæœ¬
 
 ---------------------------------------------------------------------------------------
 
-³£¼ûÖ¸Áî
+å¸¸è§æŒ‡ä»¤
 
-mvn -v 		²é¿´maven°æ±¾
+mvn -v 		æŸ¥çœ‹mavenç‰ˆæœ¬
 
-     compile  	±àÒë
+     compile  	ç¼–è¯‘
 
-     test       ²âÊÔ
+     test       æµ‹è¯•
 
-     package  	´ò°ü
+     package  	æ‰“åŒ…
 
-     clean	É¾³ıtarget
+     clean	åˆ é™¤target
 
-     install  	°²×°jar°üµ½±¾µØ²Ö¿âÖĞ  pomÌí¼Ó×ø±ê¼´¿É
+     install  	å®‰è£…jaråŒ…åˆ°æœ¬åœ°ä»“åº“ä¸­  pomæ·»åŠ åæ ‡å³å¯
 
 
-	×Ô¶¯´´½¨Ä¿Â¼
+	è‡ªåŠ¨åˆ›å»ºç›®å½•
 
-	mvn -archetype:generate		°´ÌáÊ¾½øĞĞÑ¡Ôñ
+	mvn -archetype:generate		æŒ‰æç¤ºè¿›è¡Œé€‰æ‹©
 
-	mvn -archetype:generate -DgroupId=×éÖ¯Ãû£¬¹«Ë¾ÍøÖ··´Ğ´ 
-				-DartifactId=ÏîÄ¿Ãû-Ä£¿éÃû 
-				-Dversion=°æ±¾ºÅ 
-				-Dpackage=´úÂëËùÔÚ°üÃû
+	mvn -archetype:generate -DgroupId=ç»„ç»‡åï¼Œå…¬å¸ç½‘å€åå†™ 
+				-DartifactId=é¡¹ç›®å-æ¨¡å—å 
+				-Dversion=ç‰ˆæœ¬å· 
+				-Dpackage=ä»£ç æ‰€åœ¨åŒ…å
 	
-	mavenÖĞµÄ×ø±êºÍ²Ö¿â
+	mavenä¸­çš„åæ ‡å’Œä»“åº“
 
-	×ø±ê
-	    ¹¹¼ş
-	²Ö¿â
-	    ±¾µØ²Ö¿âºÍÔ¶³Ì²Ö¿â
-	¾µÏñ²Ö¿â
+	åæ ‡
+	    æ„ä»¶
+	ä»“åº“
+	    æœ¬åœ°ä»“åº“å’Œè¿œç¨‹ä»“åº“
+	é•œåƒä»“åº“
 	    <mirror>
 
-	¸ü¸ÄÔ¶³Ì²Ö¿âÎ»ÖÃ
+	æ›´æ”¹è¿œç¨‹ä»“åº“ä½ç½®
 		<settings><localRepository>
 
 --------------------------------------------------------------------------------------
 
-mavenÉúÃüÖÜÆÚ
+mavenç”Ÿå‘½å‘¨æœŸ
 
-clean		ÇåÀíÏîÄ¿
-	pre-clean	Ö´ĞĞÇåÀíÇ°µÄ¹¤×÷
-	clean		ÇåÀíÉÏÒ»´Î¹¹½¨Éú³ÉµÄËùÓĞÎÄ¼ş
-	post-clean	Ö´ĞĞÇåÀíºóµÄ¹¤×÷
+clean		æ¸…ç†é¡¹ç›®
+	pre-clean	æ‰§è¡Œæ¸…ç†å‰çš„å·¥ä½œ
+	clean		æ¸…ç†ä¸Šä¸€æ¬¡æ„å»ºç”Ÿæˆçš„æ‰€æœ‰æ–‡ä»¶
+	post-clean	æ‰§è¡Œæ¸…ç†åçš„å·¥ä½œ
 
-default		¹¹½¨ÏîÄ¿
+default		æ„å»ºé¡¹ç›®
 	compile  test   package   install
 
-site		Éú³ÉÏîÄ¿Õ¾µã
-	pre-site	ÔÚÉú³ÉÏîÄ¿Õ¾µãÇ°ÒªÍê³ÉµÄ¹¤×÷
-	site		Éú³ÉÏîÄ¿µÄÕ¾µãÎÄµµ
-	post-site	ÔÚÉú³ÉÏîÄ¿Õ¾µãºóÒªÍê³ÉµÄ¹¤×÷
-	site-deploy	·¢²¼Éú³ÉµÄÕ¾µãµ½·şÎñÆ÷ÉÏ
+site		ç”Ÿæˆé¡¹ç›®ç«™ç‚¹
+	pre-site	åœ¨ç”Ÿæˆé¡¹ç›®ç«™ç‚¹å‰è¦å®Œæˆçš„å·¥ä½œ
+	site		ç”Ÿæˆé¡¹ç›®çš„ç«™ç‚¹æ–‡æ¡£
+	post-site	åœ¨ç”Ÿæˆé¡¹ç›®ç«™ç‚¹åè¦å®Œæˆçš„å·¥ä½œ
+	site-deploy	å‘å¸ƒç”Ÿæˆçš„ç«™ç‚¹åˆ°æœåŠ¡å™¨ä¸Š
 	
 --------------------------------------------------------------------------------------
 
-pomÔªËØ
+pomå…ƒç´ 
 
-<groupId>·´Ğ´µÄ¹«Ë¾ÍøÖ·+ÏîÄ¿Ãû</groupId>
+<groupId>åå†™çš„å…¬å¸ç½‘å€+é¡¹ç›®å</groupId>
 
-<artifactId>ÏîÄ¿Ãû+Ä£¿éÃû</artifactId>
+<artifactId>é¡¹ç›®å+æ¨¡å—å</artifactId>
 
 <version></version>
-µÚÒ»¸ö0 ±íÊ¾´ó°æ±¾ºÅ
-µÚ¶ş¸ö0 ±íÊ¾·ÖÖ§°æ±¾ºÅ
-µÚÈı¸ö0 ±íÊ¾Ğ¡°æ±¾ºÅ
+ç¬¬ä¸€ä¸ª0 è¡¨ç¤ºå¤§ç‰ˆæœ¬å·
+ç¬¬äºŒä¸ª0 è¡¨ç¤ºåˆ†æ”¯ç‰ˆæœ¬å·
+ç¬¬ä¸‰ä¸ª0 è¡¨ç¤ºå°ç‰ˆæœ¬å·
 0.0.1
-snapshot¿ìÕÕ
-alpha	ÄÚ²¿²âÊÔ
-beta	¹«²â
-Release	ÎÈ¶¨
-GA	ÕıÊ½·¢²¼
+snapshotå¿«ç…§
+alpha	å†…éƒ¨æµ‹è¯•
+beta	å…¬æµ‹
+Release	ç¨³å®š
+GA	æ­£å¼å‘å¸ƒ
 
-<packaging></packaging>		Ä¬ÈÏÊÇjar    war  zip  pom
+<packaging></packaging>		é»˜è®¤æ˜¯jar    war  zip  pom
 
-<name></name>			ÏîÄ¿ÃèÊöÃû
+<name></name>			é¡¹ç›®æè¿°å
 
-<url></url>			ÏîÄ¿µØÖ·
+<url></url>			é¡¹ç›®åœ°å€
 
-<description></description>	ÏîÄ¿ÃèÊö
+<description></description>	é¡¹ç›®æè¿°
 
 <dependencies>
   <dependency>
@@ -116,11 +118,11 @@ GA	ÕıÊ½·¢²¼
 	<version></version>
 	<type></type>
 	<scope>test</scope>
-	<optional></optional>	ÉèÖÃÒÀÀµÊÇ·ñ¿ÉÑ¡
+	<optional></optional>	è®¾ç½®ä¾èµ–æ˜¯å¦å¯é€‰
 	<exclusions>
 	  <exclusion>
 	  </exclusion>
-	</exclusions> ÅÅ³ıÒÀÀµ
+	</exclusions> æ’é™¤ä¾èµ–
   </dependency>
   
   <dependencyManagement>
@@ -128,7 +130,7 @@ GA	ÕıÊ½·¢²¼
   </dependencyManagement>
 
   <build>
-	<plugins>		²å¼şÁĞ±í
+	<plugins>		æ’ä»¶åˆ—è¡¨
 	    <groupId></groupId>
 	    <artifaceId></artifaceId>
 	    <version></version>
