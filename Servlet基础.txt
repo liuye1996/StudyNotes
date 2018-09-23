@@ -1,0 +1,162 @@
+https://www.imooc.com/video/5535
+
+---------------------------------------------------------------------------------------------
+
+Tomcat容器等级
+
+Servlet容器管理context容器，一个Context对应一个Web工程
+
+Tomcat
+  --container容器
+    --engine
+      --host
+	--Servlet容器
+	  --context容器
+
+--------------------------------------------------------------------------------------------
+
+手工编写第一个Servlet
+	1.继承HttpServlet
+	2.重写doGet()或者doPost()方法
+	3.在web.xml中注册Servlet
+---------------------------------------------------------
+index.jsp
+
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+   
+  </head>
+  
+  <body>
+    <h1>第一个Servlet小例子</h1>
+    <hr>
+    <a href="servlet/HelloServlet">get方式请求HelloServlet</a><br><br>
+    
+    <form action="servlet/HelloServlet" method="post">
+      <input type="submit" value="Post方式请求HelloServlet" />
+    </form>
+  </body>
+</html>
+-------------------------------------------------------------------
+//编写继承于HttpServlet，重写Get() Post()方法
+servlet.HelloServlet.java
+
+package servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+//继承于HttpServlet
+public class HelloServlet extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		System.out.println("处理Get()请求。。。");
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html;charset=utf-8");
+		out.println("<strong>Hello Servlet!</strong><br>");
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		System.out.println("处理Post()请求。。。");
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html;charset=utf-8");
+		out.println("<strong>Hello Servlet!</strong><br>");
+	}
+}
+-------------------------------------------------------------------
+//在web.xml中绑定
+web.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<servlet-class>servlet.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<url-pattern>/servlet/HelloServlet</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
+
+---------------------------------------------------------------------------------------------------
+
+Servlet执行流程
+
+Get方式请求HelloServlet 
+----> <a href="servlet/HelloServlet"> 
+----> <url-pattern>/servlet/HelloServlet</url-pattern>
+----> <servlet-mapping>
+	<servlet-name>HelloServlet</servlet-name>
+----> <servlet>
+  	<servlet-name>HelloServlet</servlet-name>
+----> <servlet-class>servlet.HelloServlet</servlet-class>
+----> Helloservlet.java --> doGet()
+
+
+Servlet生命周期
+
+	1.初始化阶段，调用init()方法
+
+	2.相应客户请求阶段，调用service()方法。由service()方法根据提交方式选择执行doGet()或doPost()方法
+
+	3.终止阶段，调用Destroy()方法
+
+<load-on-startup>1</load-on-startup>   数字越小执行优先级越高
+
+----------------------------------------------------------------------------------------------------
+
+MVC
+
+Model    view    controller
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
