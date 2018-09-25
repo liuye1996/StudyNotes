@@ -1,0 +1,118 @@
+
+https://www.imooc.com/video/16349
+
+----------------------------------------------
+
+spring boot 的角色
+
+	spring cloud
+		|
+	spring boot
+		|
+	spring Frameword
+
+
+spring boot 2.0新特性
+
+语言		java 8+  kotlin
+	
+底层框架	spring Framwork 5.0.x
+
+全新特性	web flux
+
+为什么选择web flux
+
+函数编程：java 8 Lambda
+
+响应编程：Reactive Streams
+
+异步编程：Servlet 3.1 或 Asyc NIO
+
+---------------------------------------------------
+
+@Configuration     java版的xml文件
+
+@Autowired这里用的是方法中的参数注入
+
+Servlet:
+
+    请求接口：ServletRequest 或者 HttpServletResponse
+
+    响应接口：ServletResponse 或者 HttpServletResponse
+
+Spring5.0重新定义了服务请求和响应接口：
+
+    请求接口：ServerRequest，响应接口：ServerResponse
+
+    这种方式既可支持Servlet规范，也可支持自定义，比如Netty（Web Server）
+
+
+
+Flux和Mono 是 Reactor 中的流数据类型，其中Flux会发送多次，Mono会发送0次或一次
+
+使用webflux需要具备的基础是Reactive programming 的理解,即：Reactor 的基础 和 熟练的java8 lambda使用
+
+----------------------------------------------------
+
+构建项目
+
+	图形化方式http://startspring.io
+
+	命令行方式
+
+---------------------------------------------------
+
+
+	多模块 Spring Boot 项目
+
+	重构
+
+		调整主（父）工程类型（<packaging>）
+
+		创建子模块工程（<module>）
+	
+			模型层：model
+
+			持久层：persistence
+
+			表示层：web
+
+----------------------------------------------------------
+
+	项目打包
+
+	打包方式
+
+		构建JAR包
+
+		构建WAR包
+
+		指定Main-Class
+
+---------------------------------------------------------------
+
+Springboot项目的3种运行模式：
+
+	idea方式，jar/war方式，maven插件方式
+
+		如果是在开发过程中，会使用idea方式
+
+		如果是在线上的服务器上，会使用jar/war方式，作为启动脚本
+
+		如果开发环境是Linux环境，会使用maven插件方式。
+
+
+
+	先在主目录下：mvn -Dmaven.test.skip -U clean install	
+
+	在main模块下：mvn spring-boot:run
+
+
+
+
+
+
+
+
+
+
