@@ -1,0 +1,131 @@
+
+https://www.imooc.com/video/8861
+
+-----------------------------------------------------------
+
+概念：
+	注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。
+
+------------------------------------------------------------
+
+
+JDK自带的注解
+
+	@Override 			重写父类方法
+
+	@Deprecated 			方法过时
+
+	@SuppressWarnings("xxx") 	忽略了xxx警告		
+
+常见第三方注解：
+
+	Spring:@Autowired  @Service  @Repository
+	
+	Mybatis:@InsertProvider  @UpdateProvider  @Options
+
+--------------------------------------------------------------
+
+注解的分类：
+
+1.按运行机制分：
+	源码注解(注解只在源码中存在，编译成.class文件就不存在了)；
+
+	编译时注解(注解在源码和.class文件中都存在)；
+
+	运行时注解(在运行阶段还起作用，甚至会影响运行逻辑的注解)
+
+
+2.按来源分：
+
+	来自JDK的注解；
+
+	来自第三方的注解；
+
+	我们自己定义的注解
+	
+--------------------------------------------------------------------
+
+自定义注解
+	成员类型是受限的，合法的类型包括原始类型及String,Calss,Anootation,Enumreation
+	
+	如果注解已有一个成员，则成员名必须取名为Vaue(),在使用的时可以忽略成员名和赋值号（=）
+	
+	注解类可以没有成员，没有成员的注解成为表示注解
+	
+	public @interface javen{
+		String name();
+		String author();
+		int age() default 19;
+	}
+	
+元注解
+
+	@Target({ElementType.CONSTRUCTOR,ElementType.FIELD,ElementType.METHOD})
+	// Target 注解的作用域   CONSTRUCTOR 构造方法声明，FIELD 字段声明，LOCAL_VARIABLE 局部变量声明 ，METHOD 方法声明，PACKAGE 包声明，PARAMETER 参数声明，TYPE 类接口。
+
+	@Retention(RetentionPolicy.RUNTIME)
+	//Retention 生命周期 SOURCE 只在源码显示，编译时会丢弃，CLASS 编译时会记录到class中，运行时忽略，RUNTIME 运行时存在，可以通过反射读取。
+
+	@Inherited 
+	//Inherited 允许子类继承
+
+	@Documented 生成javadoc的时候包含注解
+
+使用自定义注解
+
+	使用注解的语法：
+
+	@<注解名>(<成员名1>=<成员值1>,<成员名2>=<成员值2>,...)
+
+	@Description(desc ="I am eyeColor",author="C boy",age=18)
+	public String eyeColor(){
+		return "red";
+	}
+
+-------------------------------------------------------------------------------
+
+1. 虽然
+public @interface Description{
+    String desc();
+}
+@Description(desc="the name method")
+不会报错。
+但不符合规范，既然只有一个成员，就要使用value作为成员名，改成：
+public @interface Description{
+    String value();
+}
+然后在使用注解的时候，直接赋值，不写成员名和等号：
+@Description("the name method")
+以上方式，约定俗成，比较直观。
+
+2. 没有成员的注解——标志注解（比如常见的@Override）,在使用的时候不加括号。
+
+3. 当一个方法被规定为({ElementType.METHOD})就表示只能用于方法的注解，如果用在类上面，就会报错（添加 ElementType.TYPE 则可适用于类）。这里没有包含关系，例如只写ElementType.TYPE 则不能对方法进行注解，只能对类或接口进行注解。
+
+4. @Documented（属于标识注解，生成javadoc时会包含注解）
+创建一个Javadoc :右击项目--> Export --> Java --> Javadoc --> next -->Browser 选择要存放的文件夹。点击finish就生成成功了。
+打开这个文件夹，点击index.html，就能查看该项目的一些摘要。
+
+-----------------------------------------------------------------------------------
+
+反射，注解拼装sql语句
+
+将sql语句的表明用注解封装  对应的注解在类名上
+
+将sql语句的字段名用注解封装  对应的注解在类的成员变量上
+
+用反射获得对象的类类型，用.getClass方法因为传进的参数为具体实例对象
+
+Stringbiulder拼装sql语句
+
+类类型的.getAnnotation（注解的类类型）方法获得类注解对象
+
+
+
+
+
+
+
+
+
+
