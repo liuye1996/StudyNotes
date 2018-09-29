@@ -30,6 +30,24 @@ spring boot 2.0新特性
 
 ---------------------------------------------------
 
+POJO  BO  VO
+
+POJO  VO
+
+Controller VO-view object
+	|
+Service  BO-business object
+	|
+Dao  POJO-Plain Oridinary Java Object
+
+
+Cotroller Service  VO-value objrct
+	|
+Dao POJO-Plain Oridinary Java Object
+
+
+------------------------------------------------------
+
 @Configuration     java版的xml文件
 
 @Autowired这里用的是方法中的参数注入
